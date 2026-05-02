@@ -35,11 +35,11 @@ const TypewriterText = ({ texts }: { texts: string[] }) => {
 
 export const Hero = () => {
   return (
-    <section id="about" className="pt-32 pb-20 px-6 md:px-12 flex flex-col items-center text-center max-w-7xl mx-auto overflow-hidden relative">
+    <section id="about" className="pt-24 md:pt-32 pb-16 md:pb-20 px-6 md:px-12 flex flex-col items-center text-center max-w-7xl mx-auto overflow-hidden relative">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 w-fit mb-8"
+        className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 w-fit mb-6 md:mb-8"
       >
         <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
         <span className="text-[10px] uppercase tracking-widest text-gray-400 font-bold">Available for new projects</span>
@@ -49,9 +49,9 @@ export const Hero = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="text-6xl md:text-8xl font-extrabold tracking-tighter mb-8 leading-[1.05]"
+        className="text-4xl sm:text-6xl md:text-8xl font-extrabold tracking-tighter mb-6 md:mb-8 leading-[1.1] md:leading-[1.05]"
       >
-        Architecting High-Performance <br />
+        Architecting High-Performance <br className="hidden sm:block" />
         <TypewriterText texts={['.NET Systems.', 'Enterprise Apps.', 'Cloud Solutions.', 'Web Experiences.']} />
       </motion.h1>
 
@@ -59,7 +59,7 @@ export const Hero = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.4 }}
-        className="text-lg md:text-xl text-gray-400 max-w-2xl mb-12 leading-relaxed"
+        className="text-base md:text-xl text-gray-400 max-w-2xl mb-10 md:mb-12 leading-relaxed px-4 sm:px-0"
       >
         Full Stack .NET Developer with 4+ years of experience building scalable and secure web applications using ASP.NET Core and Angular. Expert in REST APIs, performance optimization, and Clean Architecture (SOLID).
       </motion.p>

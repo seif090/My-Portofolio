@@ -4,16 +4,16 @@ import { Send, MessageCircle, Phone, Mail, MapPin } from 'lucide-react';
 
 export const ContactSection = () => {
   return (
-    <section id="contact" className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
+    <section id="contact" className="py-24 px-4 sm:px-6 md:px-12 max-w-7xl mx-auto">
       <div className="glass-card overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-2">
           {/* Info Side */}
-          <div className="p-12 bg-white/5 space-y-12 relative overflow-hidden">
+          <div className="p-8 sm:p-12 bg-white/5 space-y-12 relative overflow-hidden">
              <div className="absolute top-0 right-0 w-64 h-64 bg-blue-600/10 blur-[100px] rounded-full translate-x-1/2 -translate-y-1/2" />
              
              <div className="space-y-4 relative z-10">
-               <h2 className="text-4xl font-bold text-white">Let's Build Something <br /> Meaningful Together</h2>
-               <p className="text-gray-400 max-w-sm">
+               <h2 className="text-3xl sm:text-4xl font-bold text-white leading-tight">Let's Build Something <br /> Meaningful Together</h2>
+               <p className="text-gray-400 max-w-sm text-sm sm:text-base">
                  I'm currently accepting new projects. Whether you have a clear vision or just an idea, let's talk.
                </p>
              </div>
@@ -29,7 +29,7 @@ export const ContactSection = () => {
                   href="https://wa.me/201008385505" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-2xl font-bold hover:scale-105 transition-all shadow-2xl"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-white text-black px-8 py-4 rounded-2xl font-bold hover:scale-105 transition-all shadow-2xl"
                 >
                   <MessageCircle className="w-6 h-6 text-green-500" />
                   WhatsApp Me
@@ -38,7 +38,7 @@ export const ContactSection = () => {
           </div>
 
           {/* Form Side */}
-          <div className="p-12 space-y-8">
+          <div className="p-8 sm:p-12 space-y-8">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <InputGroup label="Full Name" placeholder="John Doe" />
               <InputGroup label="Email Address" placeholder="john@example.com" type="email" />

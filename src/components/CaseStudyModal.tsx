@@ -37,20 +37,20 @@ export const CaseStudyModal = ({ project, onClose }: CaseStudyModalProps) => {
             <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/20 to-transparent" />
             <button 
               onClick={onClose}
-              className="absolute top-6 right-6 p-2 bg-black/50 hover:bg-black/70 rounded-full text-white backdrop-blur-md transition-colors"
+              className="absolute top-4 md:top-6 right-4 md:right-6 p-2 bg-black/50 hover:bg-black/70 rounded-full text-white backdrop-blur-md transition-colors z-10"
             >
-              <X className="w-6 h-6" />
+              <X className="w-5 h-5 md:w-6 md:h-6" />
             </button>
-            <div className="absolute bottom-8 left-8 right-8">
-              <h2 className="text-3xl md:text-5xl font-bold mb-4">{project.title}</h2>
-              <div className="flex gap-4">
+            <div className="absolute bottom-4 md:bottom-8 left-4 md:left-8 right-4 md:right-8">
+              <h2 className="text-2xl md:text-5xl font-bold mb-4">{project.title}</h2>
+              <div className="flex gap-3">
                 {project.githubUrl && (
-                  <a href={project.githubUrl} className="btn-primary flex items-center gap-2 py-2 text-sm">
+                  <a href={project.githubUrl} className="btn-primary flex items-center gap-2 py-1.5 md:py-2 text-xs md:text-sm">
                     <Github className="w-4 h-4" /> Repo
                   </a>
                 )}
                 {project.demoUrl && (
-                  <a href={project.demoUrl} className="btn-secondary flex items-center gap-2 py-2 text-sm">
+                  <a href={project.demoUrl} className="btn-secondary flex items-center gap-2 py-1.5 md:py-2 text-xs md:text-sm">
                     <ExternalLink className="w-4 h-4" /> Live Demo
                   </a>
                 )}
@@ -58,7 +58,7 @@ export const CaseStudyModal = ({ project, onClose }: CaseStudyModalProps) => {
             </div>
           </div>
 
-          <div className="p-8 grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="p-6 md:p-8 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
             {/* Left Content */}
             <div className="md:col-span-2 space-y-10">
               <section>

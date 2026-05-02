@@ -11,11 +11,12 @@ export const Navbar = ({ onShowResume }: NavbarProps) => {
     <motion.nav 
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className="fixed top-0 left-0 right-0 z-50 glass-nav h-20 flex items-center px-6 md:px-12 justify-between"
+      className="fixed top-0 left-0 right-0 z-50 glass-nav h-20 flex items-center px-4 md:px-12 justify-between"
     >
       <div className="flex items-center gap-2 cursor-pointer group">
-        <span className="text-xl font-bold tracking-tighter bg-gradient-to-r from-white to-gray-500 bg-clip-text text-transparent">
-          SEIF ELDIN TAREK
+        <span className="text-lg sm:text-xl font-bold tracking-tighter bg-gradient-to-r from-white to-gray-500 bg-clip-text text-transparent">
+          <span className="inline sm:hidden">SEIF TAREK</span>
+          <span className="hidden sm:inline">SEIF ELDIN TAREK</span>
         </span>
       </div>
 

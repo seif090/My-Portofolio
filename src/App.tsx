@@ -51,17 +51,17 @@ export default function App() {
 
         {/* Stats Strip */}
         <div className="border-y border-white/5 bg-white/[0.01]">
-          <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="max-w-7xl mx-auto px-6 py-10 md:py-12 grid grid-cols-2 md:grid-cols-4 gap-y-10 md:gap-8">
             {[
               { icon: Code2, label: 'Projects Completed', value: '45+' },
               { icon: Rocket, label: 'Years Experience', value: '4+' },
               { icon: Cpu, label: 'Enterprise Systems', value: '12+' },
               { icon: Globe, label: 'Global Clients', value: '20+' }
             ].map((stat, i) => (
-              <div key={i} className="text-center group">
+              <div key={i} className="text-center group px-2">
                 <stat.icon className="w-5 h-5 text-gray-600 mx-auto mb-2 group-hover:text-blue-500 transition-colors" />
-                <div className="text-3xl font-bold mb-1">{stat.value}</div>
-                <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500">{stat.label}</div>
+                <div className="text-2xl md:text-3xl font-bold mb-1">{stat.value}</div>
+                <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 leading-tight">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -69,16 +69,16 @@ export default function App() {
 
         {/* Projects Section */}
         <section id="projects" className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
             <div className="space-y-4">
               <h2 className="text-4xl font-bold">Featured <span className="text-blue-500 italic">Work</span></h2>
               <p className="text-gray-400 max-w-xl font-medium">
                 A selection of enterprise architectures and high-performance applications designed to solve complex business problems.
               </p>
             </div>
-            <div className="flex gap-2">
+            <div className="flex gap-2 overflow-x-auto pb-4 md:pb-0 scrollbar-hide no-scrollbar -mx-6 px-6 md:mx-0 md:px-0">
                {['All', 'Backend', 'Frontend', 'Cloud'].map(filter => (
-                 <button key={filter} className={`px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-widest transition-all ${filter === 'All' ? 'bg-blue-600 text-white' : 'hover:bg-white/5 text-gray-500'}`}>
+                 <button key={filter} className={`whitespace-nowrap px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-widest transition-all shrink-0 ${filter === 'All' ? 'bg-blue-600 text-white' : 'hover:bg-white/5 text-gray-500'}`}>
                    {filter}
                  </button>
                ))}
