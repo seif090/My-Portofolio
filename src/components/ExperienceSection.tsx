@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Briefcase, Calendar, CheckCircle2 } from 'lucide-react';
+import { Briefcase, Calendar, CheckCircle2, GraduationCap, Languages } from 'lucide-react';
 
 const experiences = [
   {
@@ -31,6 +31,25 @@ const experiences = [
   }
 ];
 
+const education = [
+  {
+    degree: 'Bachelor in Construction and Architecture Engineering',
+    school: 'Alexandria University',
+    location: 'Alexandria, Egypt',
+    period: 'Graduated September 2024'
+  }
+];
+
+const courses = [
+  'Udacity Web Development Nanodegree',
+  'Route Academy Full Stack Diploma'
+];
+
+const languages = [
+  { name: 'English', level: 'Advanced' },
+  { name: 'Arabic', level: 'Native' }
+];
+
 export const ExperienceSection = () => {
   return (
     <section id="experience" className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
@@ -39,7 +58,7 @@ export const ExperienceSection = () => {
         <p className="text-gray-400 max-w-2xl">My journey in building enterprise-grade software, from robust backends to seamless frontends.</p>
       </div>
 
-      <div className="space-y-12">
+      <div className="space-y-12 mb-24">
         {experiences.map((exp, i) => (
           <motion.div 
             key={i}
@@ -78,6 +97,75 @@ export const ExperienceSection = () => {
             </div>
           </motion.div>
         ))}
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <motion.div
+           initial={{ opacity: 0, x: -20 }}
+           whileInView={{ opacity: 1, x: 0 }}
+           viewport={{ once: true }}
+           className="glass-card p-8 md:p-12"
+        >
+          <div className="flex items-center gap-4 mb-8">
+            <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center">
+              <GraduationCap className="w-6 h-6 text-blue-500" />
+            </div>
+            <h3 className="text-2xl font-bold">Education & Courses</h3>
+          </div>
+          
+          <div className="space-y-8">
+            {education.map((edu, i) => (
+              <div key={i} className="border-l-2 border-blue-500/20 pl-6 py-2">
+                <h4 className="text-lg font-bold text-white mb-1">{edu.degree}</h4>
+                <div className="text-blue-400 text-sm mb-2">{edu.school}, {edu.location}</div>
+                <div className="text-gray-500 text-xs font-mono">{edu.period}</div>
+              </div>
+            ))}
+
+            <div className="space-y-3 pt-4">
+              <h5 className="text-sm font-bold uppercase tracking-wider text-gray-500">Professional Certifications</h5>
+              {courses.map((course, i) => (
+                <div key={i} className="flex items-center gap-3 text-gray-300">
+                  <div className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+                  <span>{course}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+
+        <motion.div
+           initial={{ opacity: 0, x: 20 }}
+           whileInView={{ opacity: 1, x: 0 }}
+           viewport={{ once: true }}
+           className="glass-card p-8 md:p-12"
+        >
+          <div className="flex items-center gap-4 mb-8">
+            <div className="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center">
+              <Languages className="w-6 h-6 text-green-500" />
+            </div>
+            <h3 className="text-2xl font-bold">Languages</h3>
+          </div>
+
+          <div className="grid grid-cols-1 gap-6">
+            {languages.map((lang, i) => (
+              <div key={i} className="space-y-2">
+                <div className="flex justify-between items-center">
+                  <span className="font-bold text-white">{lang.name}</span>
+                  <span className="text-sm text-green-400">{lang.level}</span>
+                </div>
+                <div className="w-full h-1.5 bg-white/5 rounded-full overflow-hidden">
+                  <motion.div 
+                    initial={{ width: 0 }}
+                    whileInView={{ width: lang.level === 'Native' ? '100%' : '85%' }}
+                    transition={{ duration: 1, ease: 'easeOut' }}
+                    className="h-full bg-green-500" 
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
