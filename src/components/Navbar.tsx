@@ -36,8 +36,8 @@ export const Navbar = () => {
           <Linkedin className="w-5 h-5" />
         </a>
         <a 
-          href="/Resume_Seif_Eldin_Tarek.pdf" 
-          download="Resume_Seif_Eldin_Tarek.pdf"
+          href="/Seif-Eldin-CV.pdf.pdf" 
+          download="Seif-Eldin-CV.pdf.pdf"
           className="btn-primary text-sm px-5 py-2.5"
         >
           Resume
