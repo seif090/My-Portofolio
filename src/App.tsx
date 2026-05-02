@@ -12,6 +12,7 @@ import { ProcessSection } from './components/ProcessSection';
 import { SkillsSection } from './components/SkillsSection';
 import { ExperienceSection } from './components/ExperienceSection';
 import { ContactSection } from './components/ContactSection';
+import { ResumePDFView } from './components/ResumePDFView';
 import { projects } from './data/projects';
 import { Project } from './types';
 import { motion } from 'framer-motion';
@@ -19,6 +20,23 @@ import { Code2, Cpu, Globe, Rocket } from 'lucide-react';
 
 export default function App() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [showResume, setShowResume] = useState(false);
+
+  if (showResume) {
+    return (
+      <>
+        <div className="fixed top-6 left-6 z-[100] print:hidden">
+           <button 
+             onClick={() => setShowResume(false)}
+             className="bg-black/80 backdrop-blur-md border border-white/10 text-white px-6 py-2 rounded-full font-bold hover:bg-white/10 transition-all"
+           >
+             ← Back to Portfolio
+           </button>
+        </div>
+        <ResumePDFView />
+      </>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-[#050505] selection:bg-blue-500/30 selection:text-blue-200 relative overflow-hidden flex flex-col">
@@ -26,7 +44,7 @@ export default function App() {
       <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none"></div>
       <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-purple-600/10 rounded-full blur-[120px] pointer-events-none"></div>
 
-      <Navbar />
+      <Navbar onShowResume={() => setShowResume(true)} />
       
       <main className="relative z-10">
         <Hero />

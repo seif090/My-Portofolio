@@ -2,7 +2,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail } from 'lucide-react';
 
-export const Navbar = () => {
+interface NavbarProps {
+  onShowResume: () => void;
+}
+
+export const Navbar = ({ onShowResume }: NavbarProps) => {
   return (
     <motion.nav 
       initial={{ y: -100 }}
@@ -35,13 +39,12 @@ export const Navbar = () => {
         <a href="https://www.linkedin.com/in/seif-tarek-a88567254/" target="_blank" rel="noopener noreferrer" className="p-2 hover:bg-white/5 rounded-full transition-colors hidden sm:flex">
           <Linkedin className="w-5 h-5" />
         </a>
-        <a 
-          href="/Seif-Eldin-CV.pdf.pdf" 
-          download="Seif-Eldin-CV.pdf.pdf"
+        <button 
+          onClick={onShowResume}
           className="btn-primary text-sm px-5 py-2.5"
         >
           Resume
-        </a>
+        </button>
       </div>
     </motion.nav>
   );
