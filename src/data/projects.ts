@@ -142,14 +142,14 @@ export const projects: Project[] = [
   },
   {
     id: 'swim-app',
-      title: 'Swim Club Management',
-      description: 'A platform for managing swimming lessons, instructor schedules, and student progress.',
-      longDescription: 'Swim is a specialized management tool for aquatic centers. It tracks lesson attendance, student skill levels, and instructor availability in a unified dashboard.',
-      image: 'https://images.unsplash.com/photo-1530549387074-d56199399493?auto=format&fit=crop&q=80&w=2000',
-      tags: ['C#', '.NET', 'MVC'],
+      title: 'Swim Club Management API',
+      description: 'A robust backend service for managing aquatic centers, instructor schedules, and membership data.',
+      longDescription: 'Swim API is a high-performance backend solution designed for swim clubs. It provides endpoints for lesson scheduling, instructor availability tracking, and student performance metrics. Built with .NET MVC, it follows strict architectural patterns for scalability and data integrity.',
+      image: '/download.jfif',
+      tags: ['C#', '.NET', 'REST API', 'SQL Server'],
       githubUrl: 'https://github.com/seif090/Swim',
-      features: ['Progress Tracking', 'Session Scheduling', 'Instructor Management'],
-      techStack: { frontend: ['JavaScript', 'CSS'], backend: ['.NET MVC'], database: ['SQL Server'] }
+      features: ['Automated Scheduling', 'Instructor Load Balancing', 'Performance Analytics'],
+      techStack: { frontend: ['Swagger/ReDoc'], backend: ['.NET MVC', 'C#'], database: ['SQL Server'] }
     },
     {
       id: 'pizza-menu',

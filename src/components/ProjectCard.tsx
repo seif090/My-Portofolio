@@ -6,6 +6,7 @@ import { Project } from '../types';
 interface ProjectCardProps {
   project: Project;
   onViewDetails: (project: Project) => void;
+  key?: string | number;
 }
 
 export const ProjectCard = ({ project, onViewDetails }: ProjectCardProps) => {
